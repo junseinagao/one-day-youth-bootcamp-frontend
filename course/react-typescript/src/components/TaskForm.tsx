@@ -1,5 +1,5 @@
 import React from 'react';
-import { Task } from '..';
+import { Task } from '../index';
 
 type Props = {
   tasks: Task[];
@@ -8,7 +8,7 @@ type Props = {
   setNewTaskLabel: React.Dispatch<React.SetStateAction<string>>;
 };
 
-export const TaskForm: React.FC<Props> = ({ tasks, setTasks, newTaskLabel, setNewTaskLabel }) => {
+const TaskForm: React.FC<Props> = ({ tasks, setTasks, newTaskLabel, setNewTaskLabel }) => {
   // フォームの値を保持する
   const handleNewTaskLabel = (e: React.ChangeEvent<HTMLInputElement>) => {
     setNewTaskLabel(e.target.value);
@@ -41,3 +41,5 @@ export const TaskForm: React.FC<Props> = ({ tasks, setTasks, newTaskLabel, setNe
     </>
   );
 };
+
+export const MemolizedTaskForm = React.memo(TaskForm);

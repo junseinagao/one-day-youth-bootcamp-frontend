@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
-import { TaskList } from './components/TaskList';
-import { TaskForm } from './components/TaskForm';
+import { MemolizedTaskList } from './components/TaskList';
+import { MemolizedTaskForm } from './components/TaskForm';
 import { request } from './server';
 import './index.css';
 
@@ -27,11 +27,11 @@ const App: React.VFC = () => {
       {/* ヘッダー */}
       <h1>Tutorial Works</h1>
       {/* 一覧表示 */}
-      {/* <TaskList {...{ tasks, setTasks }} /> */}
-      <TaskList tasks={tasks} setTasks={setTasks} />
+      <MemolizedTaskList {...{ tasks, setTasks }} />
+      {/* <MemolizedTaskList tasks={tasks} setTasks={setTasks} /> */}
 
       {/* タスク追加、削除 */}
-      <TaskForm {...{ tasks, setTasks, newTaskLabel, setNewTaskLabel }} />
+      <MemolizedTaskForm {...{ tasks, setTasks, newTaskLabel, setNewTaskLabel }} />
     </div>
   );
 };

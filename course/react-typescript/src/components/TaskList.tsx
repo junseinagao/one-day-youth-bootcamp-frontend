@@ -6,7 +6,7 @@ type Props = {
   setTasks: React.Dispatch<React.SetStateAction<Task[]>>;
 };
 
-export const TaskList: React.FC<Props> = ({ tasks, setTasks }) => {
+const TaskList: React.FC<Props> = ({ tasks, setTasks }) => {
   // Taskの状態を切り替える
   const handleCheckBox = (e: React.ChangeEvent<HTMLInputElement>, i: number) => {
     const newTasks = tasks.map((task, _i) => {
@@ -32,3 +32,5 @@ export const TaskList: React.FC<Props> = ({ tasks, setTasks }) => {
     </ul>
   );
 };
+
+export const MemolizedTaskList = React.memo(TaskList);
