@@ -7,8 +7,5 @@ export const TaskForm: React.FC = () => {
 
   // 完了したTaskを削除する
 
-  return (
-    <></>
-  );
+  return <></>;
 };
-
