@@ -22,7 +22,6 @@ const App: React.VFC = () => {
   }, []);
 
   return (
-    // TODO inline-style を CSS Moduleに置き換える
     <div className="index">
       {/* ヘッダー */}
       <h1>Tutorial Works</h1>
