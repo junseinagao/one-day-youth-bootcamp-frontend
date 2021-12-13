@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { TaskList } from './components/TaskList';
 import { TaskForm } from './components/TaskForm';
 import { request } from './server';
+import './index.css';
 
 // TODOタスクの型
 export type Task = { label: string; isDone: boolean };
@@ -22,7 +23,7 @@ const App: React.VFC = () => {
 
   return (
     // TODO inline-style を CSS Moduleに置き換える
-    <div style={{ marginLeft: 'auto', marginRight: 'auto', width: 700 }}>
+    <div className="index">
       {/* ヘッダー */}
       <h1>Tutorial Works</h1>
       {/* 一覧表示 */}
