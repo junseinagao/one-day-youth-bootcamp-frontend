@@ -30,7 +30,7 @@ const App: React.VFC = () => {
       <TaskList tasks={tasks} setTasks={setTasks} />
 
       {/* タスク追加、削除 */}
-      <TaskForm />
+      <TaskForm {...{ tasks, setTasks, newTaskLabel, setNewTaskLabel }} />
     </div>
   );
 };
