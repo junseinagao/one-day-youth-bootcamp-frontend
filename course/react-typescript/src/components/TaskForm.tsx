@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { Task } from '../index';
 
 type Props = {
@@ -10,21 +10,21 @@ type Props = {
 
 const TaskForm: React.FC<Props> = ({ tasks, setTasks, newTaskLabel, setNewTaskLabel }) => {
   // フォームの値を保持する
-  const handleNewTaskLabel = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleNewTaskLabel = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
     setNewTaskLabel(e.target.value);
-  };
+  }, []);
 
   // Taskの登録
-  const handleAddTask = () => {
+  const handleAddTask = useCallback(() => {
     const newTask = { label: newTaskLabel, isDone: false };
     setTasks([...tasks, newTask]);
-  };
+  }, [newTaskLabel, tasks, tasks]);
 
   // 完了したTaskを削除する
-  const handleClearTask = () => {
+  const handleClearTask = useCallback(() => {
     const newTasks = tasks.filter((task) => !task.isDone);
     setTasks(newTasks);
-  };
+  }, [tasks]);
 
   return (
     <>
