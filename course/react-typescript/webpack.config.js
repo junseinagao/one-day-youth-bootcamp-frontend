@@ -29,6 +29,7 @@ module.exports = {
   // ファイルの出力設定
   output: {
     // 出力ファイルのディレクトリ名
+    // eslint-disable-next-line node/no-path-concat
     path: `${__dirname}/dist`,
     // 出力ファイル名
     filename: 'bundle.js',
