@@ -7,6 +7,17 @@ module.exports = {
   // ts/tsxファイルをwebpackで取り扱うため、バンドル処理前にTypeScriptのローダーを使ってモジュール化
   module: {
     rules: [
+      // CSSファイルをimportしてpaeseする
+      {
+        test: /\.css/,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: { url: false },
+          },
+        ],
+      },
       {
         // 拡張子 .tsx の場合
         test: /\.tsx?$/,
