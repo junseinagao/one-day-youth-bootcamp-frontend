@@ -21,12 +21,12 @@ createServer({
     });
     // 作成
     this.post('/tasks', (schema: any, request) => {
-      let attrs = JSON.parse(request.requestBody);
+      const attrs = JSON.parse(request.requestBody);
       return schema.tasks.post(attrs);
     });
     /// 削除
     this.delete('/tasks/:id', (schema: any, request) => {
-      let id = request.params.id;
+      const id = request.params.id;
       return schema.tasks.find(id).destroy();
     });
   },

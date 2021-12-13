@@ -4,7 +4,7 @@
   "scripts": {
     "build": "webpack",
     "dev": "webpack-dev-server",
-    "lint": "prettier . --write && eslint . --fix"
+    "lint": "prettier . --write && eslint ./src/**/*.{ts,tsx} --fix"
   },
   "dependencies": {
     "@types/react": "^17.0.34",
